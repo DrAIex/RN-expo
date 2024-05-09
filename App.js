@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import ImageViewer from './components/ImageViewer';
-import Button from './components/Button';
+// import MyButton from './components/Button';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import * as ImagePicker from 'expo-image-picker';
 import CircleButton from './components/CircleButton';
@@ -13,6 +13,12 @@ import EmojiSticker from './components/EmojiSticker';
 import MyCalendar from './components/MyCalendar';
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { css, html } from 'react-strict-dom';
+
+// const {
+//   div: Div,
+//   button: Button,
+//   p: P,
+// } = html
 
 const PlaceholderImage = require('./assets/images/background-image.png');
 
@@ -73,25 +79,25 @@ export default function App() {
 
         {pickedEmoji && <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />}
       </View>
-
+{/* 
       {showAppOptions ? (
-        <html.div style={styles.optionsContainer}>
-          <html.div style={styles.optionsRow}>
+        <Div style={styles.optionsContainer}>
+          <Div style={styles.optionsRow}>
             <IconButton icon="refresh" label="Reset" onPress={onReset} />
             <CircleButton onPress={onAddSticker} />
             <IconButton icon="save-alt" label="Save" onPress={onSaveImageAsync} />
-          </html.div>
-        </html.div>
+          </Div>
+        </Div>
       ) : (
-        <html.div style={styles.footerContainer}>
-          <html.button style={styles.button_styling_choose} onClick={pickImageAsync}>
-            <html.p>Choose a photo</html.p>
-          </html.button>
-          <html.button style={styles.button_styling_use} onClick={() => setShowAppOptions(true)}>
-            <html.p>Use this photo</html.p>
-          </html.button>
-        </html.div>
-      )}
+        <Div style={styles.footerContainer}>
+          <MyButton style={styles.button_styling_choose} onClick={pickImageAsync}>
+            <P>Choose a photo</P>
+          </MyButton>
+          <MyButton style={styles.button_styling_use} onClick={() => setShowAppOptions(true)}>
+            <P>Use this photo</P>
+          </MyButton>
+        </Div>
+      )} */}
       <EmojiPicker isVisible={isModalVisible} onClose={onModalClose}>
         <EmojiList onSelect={setPickedEmoji} onCloseModal={onModalClose} onClick={() => setCounter(counter + 1)} />
       </EmojiPicker>
